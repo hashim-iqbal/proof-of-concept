@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 2021_08_30_130524) do
 
   create_table "events", force: :cascade do |t|
-    t.string "time", null: false
-    t.string "type", null: false
-    t.integer "revenue", null: false
+    t.datetime "time", null: false
+    t.integer "type", null: false
+    t.decimal "revenue", precision: 8, scale: 2, null: false
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 2021_08_30_130524) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name", limit: 25, null: false
     t.string "avatar", null: false
-    t.string "occupation", null: false
+    t.string "occupation", limit: 50, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

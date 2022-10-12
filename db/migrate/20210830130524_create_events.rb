@@ -3,9 +3,9 @@
 class CreateEvents < ActiveRecord::Migration[6.0]
   def change
     create_table :events do |t|
-      t.string :time, null: false
-      t.string :type, null: false
-      t.integer :revenue, null: false
+      t.datetime :time, null: false
+      t.integer :type, null: false
+      t.decimal :revenue, null: false, precision: 8, scale: 2
       t.references :user, foreign_key: true, index: true
 
       t.timestamps

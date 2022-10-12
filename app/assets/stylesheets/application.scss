@@ -16,3 +16,26 @@
 
  @import 'bootstrap/scss/bootstrap';
 
+ body {
+  background-color: #7E8C8D;
+
+  .container {
+    .card {
+      border-radius: 15px;
+
+      .card-img-top {
+        height: 60px;
+      }
+      .card-title {
+        font-size: x-large;
+        color: #435362;
+      }
+
+      .card-text {
+        font-size: medium;
+        font-weight: 500;
+        color: #97A7A8;
+      }
+    }
+  }
+}

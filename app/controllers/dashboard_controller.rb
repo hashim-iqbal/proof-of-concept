@@ -2,6 +2,6 @@
 
 class DashboardController < ApplicationController
   def index
-    @users = User.includes(:conversions, :impressions, :events)
+    @users = User.includes(:events)
   end
 end

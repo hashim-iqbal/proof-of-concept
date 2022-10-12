@@ -1,15 +1,13 @@
 # frozen_string_literal: true
 
 class Event < ApplicationRecord
+  self.inheritance_column = false
   belongs_to :user
 
-  TYPE_MAP = {
-    conversion: 'Conversion',
-    impression: 'Impression'
-  }
-  TYPES = TYPE_MAP.values
+  enum type: %i[conversion impression]
 
-  validates :type, inclusion: { in: TYPES }
   validates :time, :type, :revenue, presence: true
-  validates_uniqueness_of :user_id, scope: %i[type time]
+  validates :user_id, uniqueness: { scope: %i[type time] }
+
+  default_scope { order(:time) }
 end
