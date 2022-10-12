@@ -45,8 +45,6 @@ GEM
     activerecord (6.0.4.1)
       activemodel (= 6.0.4.1)
       activesupport (= 6.0.4.1)
-    activerecord-import (1.2.0)
-      activerecord (>= 3.2)
     activestorage (6.0.4.1)
       actionpack (= 6.0.4.1)
       activejob (= 6.0.4.1)
@@ -218,7 +216,6 @@ PLATFORMS
   x86_64-darwin-20
 
 DEPENDENCIES
-  activerecord-import
   bootsnap (>= 1.4.2)
   byebug
   database_cleaner-active_record (~> 2.0.1)
